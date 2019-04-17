@@ -1,0 +1,60 @@
+body {
+  display:flex;
+  font-family: sans-serif;
+  color: #ffffff;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  align-items: stretch;
+}
+h1 {
+  font-weight: 200;
+  color: #ff198c
+}
+h2 {
+  font-weight: 200;
+  color: #d3d3d3;
+  padding-top: 16px;
+}
+p {
+  max-width: 500px;
+  font-family: sans-serif;
+  font-weight: 200;
+  color: #d3d3d3;
+  padding-top: 16px;
+}
+img {
+  max-width: 300px;
+  padding-left: 80px;
+}
+.description {
+  text-align: center;
+}
+#info {
+  padding: 24px;
+  flex-grow: 1;
+}
+#barCharts {
+  flex-grow: 5;
+  overflow-y: auto;
+}
+#barCharts h2 {
+  color: #ff198c;
+}
+
+header {
+  text-align: center;
+}
+
+#myChart {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+#myChart2 {
+  background-color: add8e6;
+  padding-top: 80px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+	<title>Stavros' Homophily data</title>
+</head>
+
+
+  <body>
+			<div id="info">
+				<h1>Measuring density of social media networks</h1>
+				<h2>Data Visualizations by Stavros Pavlides using Chart.JS</h2>
+				<p>
+				The company Stavros works for, Graphika™, turns data networks into maps where the geo-dimensional relationships represent actual connectivity relationships. The bar graphs to the right of this description describe the 'Homophily' (more on that in a second) of different-sized segments of network nodes on the below map, which depicts the cyber-social terrain of Craft Beer enthusiasts:
+				</p>
+				<div class="image">
+					<img src="images/384_full_map.png" alt="Craft Beer enthusiasts map">
+				</div>
+				<p class="description">
+					Craft Beer enthusiasts
+				</p>
+			</div>
+			<div id="barCharts">
+				<script>
+					let csv1=`Boston,3.9632350807157573,#10c04b,,,,
+					Craft Beer,2.9636517467457844,#2a7e9a,,,,
+					International Beer,4.146794248528991,#680928,,,,
+					Maine,8.916415450206477,#ffc71b,,,,
+					New England,7.899538865442411,#7bea0c,,,,
+					Northeast Craft Beer,2.3390212889436377,#3060bf,,,,
+					Other,4.66036574067508,#691245,,,,
+					SM Mktg|Celebrity,5.786470261305049,#402f7e,,,,
+					Southern Craft Beer,4.27755427636805,#6f3a00,,,,
+					West|Midwest Beer,2.870980406278515,#3f0b67,,,,`;
+					</script>
+					<script>
+					let csv2=`Atlanta Craft Beer,24.231156307814377,#864d0f,,,,
+					Aus|Ireland Craft Beer,8.95329100201332,#6e102e,,,,
+					Bangor ME Local,36.46861211969851,#6d5201,,,,
+					Boston Foodies,9.01289667773291,#28c05c,,,,
+					Boston Foodies 2,9.915739558717233,#01ff55,,,,
+					Boston Food|Beer,7.815148921271167,#002268,,,,
+					Boston Lfstyle|Food,8.466843829997021,#10c04b,,,,
+					Boston Lfstyle|Food 2,7.1829971756505016,#2db85c,,,,
+					Boston News|Polit,7.545235457280522,#2efc72,,,,
+					Boston News|Sports,7.951246399088938,#2a8348,,,,
+					Boston Tech|Startup,13.6817437432166,#25a350,,,,
+					Brewing|Home Brew,2.6847857007519362,#12b7ee,,,,
+					Celeb|Boston Focus,3.7173956115907467,#60c482,,,,
+					Chicago Craft Beer,15.444085094945798,#530a8a,,,,
+					Cocktail|Food,3.7279129153074138,#f9df44,,,,
+					Colorado Craft Beer,18.54232115470242,#420d6a,,,,
+					Craft Beer Enthusiast,6.703777204416372,#02aae5,,,,
+					Craft Beer NJ|CT|MO,2.9650962392403484,#2a2a2a,,,,
+					Craft Beer News|Event,3.857110182233045,#55d4fe,,,,
+					DC|VA|MD Craft Beer,11.523566946573641,#ff9a2b,,,,
+					Florida Craft Beer,22.463594571465443,#6f3a00,,,,
+					IN|OH|MI Craft Beer,2.8774516577684057,#b048ff,,,,
+					Intl Craft Beer,3.8326454826827905,#c33d6b,,,,
+					Local Breweries,2.2367519017483306,#2a7e9a,,,,
+					MN Craft Beer,24.92254172798913,#370060,,,,
+					Maine Food|Local,11.077047490617911,#ffc71b,,,,
+					Massachus Craft Beer,7.7792065987538015,#3060bf,,,,
+					NC Craft Beer,13.667509104900704,#e1841d,,,,
+					NH Culture|Politics,17.55201568078425,#7eff00,,,,
+					NY Foodie,12.039720683308515,#ff2ba8,,,,
+					NYC Craft Beer,13.856497430034883,#002d88,,,,
+					New England Tourism,26.61470970271794,#3c5c1e,,,,
+					Ontario Craft Beer,27.934101731967246,#680928,,,,
+					Organic|Sustain Food,22.292739037072128,#9d005d,,,,
+					Philly PA Craft Beer,19.730949366610435,#1a3a79,,,,
+					Pittsburgh Craft Beer,38.02478546922991,#011a4d,,,,
+					Portland ME Beer|Food,19.26981961480146,#223c71,,,,
+					Portland ME Local,15.399990895709605,#f5b902,,,,
+					Portland ME Local 2,12.90201900093721,#a337e06,,,,
+					PortlandOR Craft Beer,17.51596030847613,#470d72,,,,
+					Portsmouth NH Local,14.312207306522719,#7dd525,,,,
+					SF Cali Craft Beer,14.360286667738825,#3f0b67,,,,
+					SMM,3.4945552517751537,#9175ff,,,,
+					SMM Health|Tech,5.593141013110803,#684ed0,,,,
+					SMM Mix,5.205375863373938,#260e87,,,,
+					SMM Motivation,3.5232208685272166,#2700c3,,,,
+					SMM Strategy,4.602606240633256,#402f7e,,,,
+					San Diego Craft Beer,10.072449077135097,#5d1990,,,,
+					TX Craft Beer,25.27609354882429,#904e04,,,,
+					UK Craft Beer,12.316422401281375,#ff0157,,,,
+					Unclustered,5.452838241570636,#6a3053,,,,
+					VT Food|Beer,14.288244491786855,#25427f,,,,
+					Vancouver Craft Beer,16.200689304907577,#6c0024,,,,
+					Vermont Local,21.458408455667655,#7ceb0b,,,,
+					Wine,23.358788128418116,#691245,,,,`
+					</script>
+
+					<header>
+						<h2>Group Homophily</h2>
+					</header>
+		      <canvas id="myChart" width="600" height="600"></canvas>
+					<header>
+						<h2>Cluster Homophily</h2>
+					</header>
+					<canvas id="myChart2" width="600" height="600"></canvas>
+		      <script src="js/jquery.js"></script>
+					<script src="js/Chart.bundle.js"></script>
+		      <script src="js/index.js"></script>
+				</div>
+    </body>
